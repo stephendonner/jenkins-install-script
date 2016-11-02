@@ -1,3 +1,9 @@
+# ensure Yum has the latest packages
+sudo yum -y update
+
+# install Git
+sudo yum -y install git
+
 # install Java
 sudo yum install java-1.8.0-openjdk.x86_64
 
@@ -10,4 +16,4 @@ sudo systemctl start jenkins.service
 sudo systemctl enable jenkins.service
 
 # Options to pass to java when running Jenkins.
-JENKINS_JAVA_OPTIONS="-Djava.awt.headless=true -Dorg.apache.commons.jelly.tags.fmt.timeZone=America/Los_Angeles -Djenkins.security.FrameOptionsPageDecorator.enabled=false"
+JENKINS_JAVA_OPTIONS="-Djava.awt.headless=true -Dorg.apache.commons.jelly.tags.fmt.timeZone=America/Los_Angeles -Djenkins.security.FrameOptionsPageDecorator.enabled=false -Djenkins.install.runSetupWizard=false"
